@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* DEBUG
+* { outline: solid 1px red; }
+*/
+
+/*********** General Styles Start ***********/
+@import url('');
+
+:root {
+    --textColor: #3a3a3a;
+    --orange: #FF6600;
+    --beige: #F6F6EF;
+    --grey: #828282;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  color: var(--textColor);
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: '', Helvetica, sans-serif;
+}
+
+.container {
+  background: var(--beige);
+}
+
+/* Here starts the codes for header */
+
+/* Here ends the code for header */
+
+
+/* Here starts the codes for section 1 */
+
+/* Here ends the code for section 1 */
+
+
+/* Here starts the codes for section 2 */
+
+/* Here ends the code for section 2 */
+
+
+/* Here starts the codes for section 3 */
+
+/* Here ends the code for section 3 */
+
+
+/* Here starts the codes for footer */
+
+/* Here ends the code for footer */
