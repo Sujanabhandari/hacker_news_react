@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
+import SearchBar from "./SearchBar";
 
 function HackerNewsPosts({ posts, count }) {
   // Loading Spinner
@@ -9,14 +10,14 @@ function HackerNewsPosts({ posts, count }) {
 
   return (
     <>
-    <h1>Hacker News - Top {count} Posts</h1>
+    <div className="justify-content-center"><h2 className="text-center m-2">Hacker News - Top {count} Posts</h2></div>
       <table>
         <tbody>
         {posts.map((post, index) => {
           return (
             <tr key={post.id}>
               <td>
-              {index+1}. <a href={post.url}>{post.title}</a> <br />
+              {index+1}. <strong><a href={post.url}>{post.title}</a></strong> <br />
               {post.score} points by {post.by} {post.time} | hide | {post.descendants}
               </td>
             </tr>
@@ -61,8 +62,11 @@ function FetchApi() {;
 
   return (
     <div className="Container Posts">
+      <SearchBar post={posts} setPosts={setPosts}/>
       <HackerNewsPosts posts={posts} count={count}/>
-      <button variant="dark" onClick={() => setCount((prev) => prev + 10 )}>Load more Posts</button>
+      <div className="text-center m-2">
+        <button variant="dark" onClick={() => setCount((prev) => prev + 10 )}>Load more Posts</button>
+      </div>
     </div>
   );
 }
