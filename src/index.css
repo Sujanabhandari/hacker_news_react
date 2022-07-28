@@ -21,8 +21,21 @@ h1, h2, h3, h4, h5, h6 {
   font-family: '', Helvetica, sans-serif;
 }
 
+a {
+  color: var(--textColor) !important;
+  text-decoration: none !important;
+}
+
+a:hover, a:active {
+  text-decoration: underline !important;
+}
+
 .container {
   background: var(--beige);
+}
+
+.App {
+  text-align: left !important;
 }
 
 /* Here starts the codes for header */
@@ -30,19 +43,16 @@ h1, h2, h3, h4, h5, h6 {
 /* Here ends the code for header */
 
 
-/* Here starts the codes for section 1 */
+/* Here starts the codes for main section */
+.Container.Posts table {
+  width: 100%;
+  font-size: 0.8rem;
+}
 
-/* Here ends the code for section 1 */
-
-
-/* Here starts the codes for section 2 */
-
-/* Here ends the code for section 2 */
-
-
-/* Here starts the codes for section 3 */
-
-/* Here ends the code for section 3 */
+.Container.Posts table tr td {
+  padding: 0.5rem;
+}
+/* Here ends the code for main section */
 
 
 /* Here starts the codes for footer */
