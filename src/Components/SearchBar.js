@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useRef } from 'react';
+import ErrorPage from './ErrorPage';
 const SearchBar = ({post, setPosts}) => {
 
     const [query, setQuery] = useState("");
@@ -48,10 +49,10 @@ const SearchBar = ({post, setPosts}) => {
 
     const handleSubmit = e => {
         console.log("handlesun" + query)
-        setIsLoading(true);
+        // setIsLoading(true);
         e.preventDefault();
         setSearch(query);
-        setIsLoading(false)
+        // setIsLoading(false)
         input_field.current.value = '';
     }
 
@@ -77,7 +78,11 @@ const SearchBar = ({post, setPosts}) => {
                     <i className="bi bi-search"></i>
                 </button>
             </div>
-            {/* {isError && <Error />} */}
+            <div>
+              {/* {isError && <ErrorPage />} */}
+              {/* {!query.hits && <ErrorPage />} */}
+            </div>
+            {/* {isError && <ErrorPage />} */}
         </div>
     )
 }

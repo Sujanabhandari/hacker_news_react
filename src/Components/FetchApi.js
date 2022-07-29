@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import SearchBar from "./SearchBar";
 
+
 function HackerNewsPosts({ posts, count }) {
   // Loading Spinner
   if (posts.length === 0) {
-    return <div><img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" /></div>;
+    // return <div><img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" /></div>;
+    return <div className="text-center mt-3"><img src={require('./404page.png')} /></div>;
   }
 
   return (
