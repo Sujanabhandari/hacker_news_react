@@ -15,7 +15,7 @@ function Main() {
         <FetchApi />
         </Col>
       </Row>
-    <Page />
+    {/* <Page /> */}
 
     </Container>
   );
