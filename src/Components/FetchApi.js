@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import Button from 'react-bootstrap/Button';
 import SearchBar from "./SearchBar";
-
+import Page from './Pagination'
 
 function HackerNewsPosts({ posts, count }) {
   // Loading Spinner
-  if (posts.length === 0) {
-    // return <div><img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" /></div>;
-    return <div className="text-center mt-3"><img src={require('./404page.png')} /></div>;
-  }
+  // if (posts.length === 0) {
+  //   // return <div><img src="https://c.tenor.com/I6kN-6X7nhAAAAAj/loading-buffering.gif" /></div>;
+  //   return <div className="text-center mt-3"><img src={require('./404page.png')} /></div>;
+  // }
 
   return (
     <>
@@ -34,6 +34,9 @@ function HackerNewsPosts({ posts, count }) {
 function FetchApi() {;
   const [posts, setPosts] = useState([]);
   const [count, setCount] = useState(10);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage] = useState(10);
 
   useEffect(() => {
     async function getTopStories() {
@@ -62,6 +65,12 @@ function FetchApi() {;
     getTopStories();
   }, [count]);
 
+    //Get current post 
+  const indexOfLastPost =  currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+
+
   return (
     <div className="Container Posts">
       <SearchBar post={posts} setPosts={setPosts}/>
@@ -69,6 +78,7 @@ function FetchApi() {;
       <div className="text-center m-2">
         <button variant="dark" onClick={() => setCount((prev) => prev + 10 )}>Load more Posts</button>
       </div>
+      <Page/>
     </div>
   );
 }

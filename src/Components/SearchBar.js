@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { useRef } from 'react';
-import ErrorPage from './ErrorPage';
+
 const SearchBar = ({post, setPosts}) => {
 
     const [query, setQuery] = useState("");
@@ -26,7 +26,13 @@ const SearchBar = ({post, setPosts}) => {
             }
             const json = await response.json();
             console.log(json)
-            if(json.hits.length == 0) setIsError(true) 
+            if(json.hits.length == 0) 
+            {
+              setIsError(true);
+              // // alert("false");
+              // return <div className="text-center mt-3"><img src={require('./404page.png')} /></div>; 
+            }
+            
             else setIsError(false) 
             setPosts(json.hits);
             // if(!json.hits) return  console.log("No post");
@@ -78,11 +84,7 @@ const SearchBar = ({post, setPosts}) => {
                     <i className="bi bi-search"></i>
                 </button>
             </div>
-            <div>
-              {/* {isError && <ErrorPage />} */}
-              {/* {!query.hits && <ErrorPage />} */}
-            </div>
-            {/* {isError && <ErrorPage />} */}
+            {isError && <div className="text-center mt-3"><img src={require('./404page.png')} /></div>}
         </div>
     )
 }
