@@ -5,10 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import FetchApi from './FetchApi';
 import Page from './Pagination'
+import Footer from './Footer';
+import NavBar from './Navbar';
 
 function Main() {
   return (
     <Container className="main">
+      <NavBar />
       <Row>
         <Col>
         {/* <SearchBar /> */}
@@ -16,7 +19,7 @@ function Main() {
         </Col>
       </Row>
     {/* <Page /> */}
-
+    <Footer />
     </Container>
   );
 }

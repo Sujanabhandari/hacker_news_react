@@ -1,0 +1,32 @@
+.NavBar {
+    background-color: orange;
+  }
+  
+  .NavBar table {
+    border: none;
+    width: 100%;
+  }
+  
+  .NavBar table td {
+    white-space: nowrap;
+  }
+  
+  .Y {
+    color: white;
+    border: white;
+    border-style: solid;
+  }
+  
+  .hacker_news {
+    font-weight: bold;
+  }
+  
+  .new {
+    color: white;
+  }
+  
+  .login {
+    text-align: right;
+    width: 100%;
+  }
+  
